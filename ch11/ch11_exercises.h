@@ -8,7 +8,6 @@ int count_chars(std::vector<std::string>& strings, std::vector<std::string>::ite
 {
     // base case
     if(it == strings.end()) { return 0; }
-    // recurse
     return (*it).length() + count_chars(strings, ++it);
 }
 
@@ -16,7 +15,6 @@ void just_evens(std::vector<int>& nums, std::vector<int>::iterator it, std::vect
 {
     // base case
     if(it == nums.end()) { return; }
-    // recurse
     if(*it % 2 == 0) { evens.push_back(*it); }
     just_evens(nums, ++it, evens);
 }
@@ -25,12 +23,12 @@ int triangular_numbers(int n)
 {
     // base case
     if(n == 1) { return 1; }
-    // base case
     return n + triangular_numbers(n - 1);
 }
 
 int x_index(std::string& str, std::string::iterator it)
 {
+    // base case
     if(it == str.end()) { return -1; }
     if(*it == 'x') 
     { 
@@ -41,6 +39,7 @@ int x_index(std::string& str, std::string::iterator it)
 
 int unique_paths(int rows, int cols)
 {
+    // base case
     if(rows == 1 || cols == 1) 
     { 
         return 1; 
